@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    MainFrameTopBar-->
+    <string name="app_name">老方子</string>
+    <string name="search_hint">输入以搜索</string>
+<!--    Modules-->
+    <string-array name="button_labels">
+        <item>教育</item>
+        <item>交流</item>
+        <item>商城</item>
+        <item>社交</item>
+        <item>我的</item>
+    </string-array>
+<!--    PersonalPage-->
+    <string name="default_personal_intro">这人什么都没留下……</string>
+    <string name="created_by">朱ZH</string>
+</resources>

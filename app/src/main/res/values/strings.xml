@@ -1,0 +1,17 @@
+<resources>
+<!--    MainFrameTopBar-->
+    <string name="app_name">Old Ways</string>
+    <string name="search_hint">Input to search…</string>
+<!--    Modules-->
+    <string-array name="button_labels">
+        <item>Education</item>
+        <item>Communication</item>
+        <item>E-Mall</item>
+        <item>Connection</item>
+        <item>Mine</item>
+    </string-array>
+<!--    PersonalPage-->
+    <string name="default_personal_intro">This person has left nothing here…</string>
+
+    <string name="created_by">zzhdev</string>
+</resources>
