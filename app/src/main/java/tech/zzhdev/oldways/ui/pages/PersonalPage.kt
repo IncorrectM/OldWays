@@ -12,8 +12,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import tech.zzhdev.oldways.data.FontSizeController
 import tech.zzhdev.oldways.data.User
-import tech.zzhdev.oldways.ui.pages.general.GeneralCard
+import tech.zzhdev.oldways.ui.cards.GeneralCard
+import tech.zzhdev.oldways.ui.pages.setting.FontSetting
 
 @Composable
 fun PersonalPage(
@@ -29,6 +31,10 @@ fun PersonalPage(
             PersonalPageTopBar(User.EXAMPLE_USER)
         }
     ) {
+        PersonalPageSettings(
+            mainPageNavController = mainPageNavController,
+            contentNavController = navController
+        )
     }
 }
 
@@ -54,10 +60,10 @@ fun PersonalPageTopBar(user: User) {
                 // 昵称
                 Text(
                     modifier = Modifier
-                        .fillMaxWidth()
+//                        .fillMaxWidth()
                         .weight(0.2f),
                     text = user.nickname,
-                    fontSize = MaterialTheme.typography.h6.fontSize
+                    fontSize = FontSizeController.subtitle,
                 )
                 Divider()
                 // 个人简介
@@ -66,7 +72,7 @@ fun PersonalPageTopBar(user: User) {
                         .fillMaxWidth()
                         .weight(0.7f),
                     text = user.personalIntroduction,
-                    fontSize = MaterialTheme.typography.body2.fontSize
+                    fontSize = FontSizeController.markL
                 )
                 Divider()
                 // 注册时间
@@ -75,11 +81,33 @@ fun PersonalPageTopBar(user: User) {
                         .fillMaxWidth()
                         .weight(0.1f),
                     text = user.registerTime.toString(),
-                    fontSize = MaterialTheme.typography.body2.fontSize
+                    fontSize = FontSizeController.markS
                 )
             }
         }
     }
+}
+
+@Composable
+fun PersonalPageSettings(
+    mainPageNavController: NavHostController,
+    contentNavController: NavHostController
+) {
+    Column {
+        Divider(
+            modifier = Modifier.padding(top = 10.dp)
+        )
+        FontSetting()
+    }
+}
+
+@Preview
+@Composable
+fun PersonalPageSettingsPreview() {
+    PersonalPageSettings(
+        mainPageNavController = rememberNavController(),
+        contentNavController = rememberNavController()
+    )
 }
 
 @Preview

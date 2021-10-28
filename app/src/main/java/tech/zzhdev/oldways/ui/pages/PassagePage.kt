@@ -1,24 +1,18 @@
 package tech.zzhdev.oldways.ui.pages
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import tech.zzhdev.oldways.data.AgePeriod
+import tech.zzhdev.oldways.data.FontSizeController
 import tech.zzhdev.oldways.data.Passage
-import tech.zzhdev.oldways.ui.screens.Screen
 
 @Composable
 fun PassagePage(
@@ -40,16 +34,21 @@ fun PassagePage(
             verticalArrangement = Arrangement.SpaceBetween,
 //            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(
-                modifier = Modifier.fillMaxWidth(),
-                text = "Author ${passage.author}",
-                textAlign = TextAlign.Right,
-                fontSize = MaterialTheme.typography.subtitle2.fontSize
-            )
+            Row(
+                horizontalArrangement = Arrangement.End
+            ) {
+                Text(
+                    modifier = Modifier.fillMaxWidth(),
+                    text = "Author ${passage.author}",
+                    textAlign = TextAlign.Right,
+                    fontSize = FontSizeController.markS
+                )
+            }
+            Divider()
             Text(
                 modifier = Modifier.fillMaxWidth(),
                 text = passage.content,
-                fontSize = MaterialTheme.typography.h6.fontSize
+                fontSize = FontSizeController.passage
             )
         }
     }
@@ -71,7 +70,7 @@ fun PassagePageTopBar(
                 .weight(0.8f),
             text = title,
             textAlign = TextAlign.Center,
-            fontSize = 30.sp
+            fontSize = FontSizeController.articleTitle
         )
     }
 }
@@ -100,6 +99,7 @@ fun getPassageById(passageId: Int): Passage {
     return Passage(
         title = "How to use this app...",
         author = "ZZHDEV",
-        content = "Article: $passageId - Banana!"
+        content = "Article: $passageId - Banana!",
+        fitAge = AgePeriod.OneToSix
     )
 }

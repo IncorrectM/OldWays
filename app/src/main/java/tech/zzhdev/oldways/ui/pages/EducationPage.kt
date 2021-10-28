@@ -12,7 +12,7 @@ import tech.zzhdev.oldways.R
 import tech.zzhdev.oldways.data.ConstLayoutData
 import tech.zzhdev.oldways.ui.cards.ECMCardContent
 import tech.zzhdev.oldways.ui.frame.FrameTopBar
-import tech.zzhdev.oldways.ui.pages.general.GeneralCard
+import tech.zzhdev.oldways.ui.cards.GeneralCard
 import tech.zzhdev.oldways.ui.screens.Screen
 
 @Composable

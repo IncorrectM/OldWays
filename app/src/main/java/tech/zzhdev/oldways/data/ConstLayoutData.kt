@@ -4,5 +4,6 @@ import androidx.compose.ui.unit.dp
 
 object ConstLayoutData {
     const val appName = "老方子"
-    val cardHeight = 200.dp
+    val generalCardHeight = 200.dp
+    val settingCardHeight = 100.dp
 }

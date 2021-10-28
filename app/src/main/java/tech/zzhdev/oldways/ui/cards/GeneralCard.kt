@@ -1,4 +1,4 @@
-package tech.zzhdev.oldways.ui.pages.general
+package tech.zzhdev.oldways.ui.cards
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
@@ -18,7 +18,7 @@ fun GeneralCard(content: @Composable() () -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .height(ConstLayoutData.cardHeight),
+            .height(ConstLayoutData.generalCardHeight),
         elevation = 6.dp,
         border = BorderStroke(
             width = 1.dp,
@@ -38,7 +38,7 @@ fun GeneralCard(
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .height(ConstLayoutData.cardHeight)
+            .height(ConstLayoutData.generalCardHeight)
             .clickable(onClick = onClick)
             ,
         elevation = 6.dp,

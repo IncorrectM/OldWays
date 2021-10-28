@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import tech.zzhdev.oldways.R
+import tech.zzhdev.oldways.data.FontSizeController
 import tech.zzhdev.oldways.exception.UnmatchedSizeException
 import tech.zzhdev.oldways.ui.cards.ECMCard
 import tech.zzhdev.oldways.ui.cards.ECMCardContent
@@ -99,7 +100,7 @@ fun FrameTopBar(appName: String) {
                 )
                 .weight(0.2f),
             text = "0 ~ 6",
-            fontSize = 25.sp,
+            fontSize = FontSizeController.subtitleL,
             textAlign = TextAlign.Center
         )
     }
