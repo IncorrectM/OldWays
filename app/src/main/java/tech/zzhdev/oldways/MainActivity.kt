@@ -3,9 +3,12 @@ package tech.zzhdev.oldways
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.*
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import dev.jeziellago.compose.markdowntext.MarkdownText
 import tech.zzhdev.oldways.ui.screens.SetupMainPageNavGraph
 import tech.zzhdev.oldways.ui.theme.OldWaysTheme
 

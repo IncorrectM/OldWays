@@ -10,7 +10,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import dev.jeziellago.compose.markdowntext.MarkdownText
 import tech.zzhdev.oldways.data.AgePeriod
+import tech.zzhdev.oldways.data.ConstLayoutData
 import tech.zzhdev.oldways.data.FontSizeController
 import tech.zzhdev.oldways.data.Passage
 
@@ -45,10 +47,11 @@ fun PassagePage(
                 )
             }
             Divider()
-            Text(
+            // 文章内容
+            MarkdownText(
                 modifier = Modifier.fillMaxWidth(),
-                text = passage.content,
-                fontSize = FontSizeController.passage
+                markdown = passage.content,
+                fontSize = FontSizeController.passageS
             )
         }
     }
@@ -96,10 +99,13 @@ fun PassagePageTopBarPreview() {
 
 fun getPassageById(passageId: Int): Passage {
     // TODO: 从服务器获取文章
+    // 从服务器查询标题，作者，更新时间等信息，同时服务器会返回一段Markdown文本作为内容
     return Passage(
         title = "How to use this app...",
         author = "ZZHDEV",
-        content = "Article: $passageId - Banana!",
+        content = "# Article: $passageId \n" +
+                "## Banana! \n" +
+                ConstLayoutData.fisherFinLogoMarkdown,
         fitAge = AgePeriod.OneToSix
     )
 }

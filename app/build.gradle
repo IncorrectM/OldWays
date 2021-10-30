@@ -48,7 +48,6 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
@@ -74,4 +73,7 @@ dependencies {
     androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
     // Jetpack Compose Integration
     implementation "androidx.navigation:navigation-compose:2.4.0-alpha10"
+
+    // Markdown support for Jetpack Compose
+    implementation 'com.github.jeziellago:compose-markdown:0.2.6'
 }
